@@ -2,7 +2,9 @@ package com.ernestovanegasdev.supermarketapi.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -19,6 +21,9 @@ public class Customer {
     private String addres;
 
     private String email;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Purchase> purchases;
 
     public String getId() {
         return id;

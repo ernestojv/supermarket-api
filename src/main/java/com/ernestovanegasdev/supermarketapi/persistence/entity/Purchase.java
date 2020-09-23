@@ -2,6 +2,7 @@ package com.ernestovanegasdev.supermarketapi.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "pruchases")
@@ -22,6 +23,13 @@ public class Purchase {
     private String comment;
 
     private Boolean status;
+
+    @ManyToOne
+    @JoinColumn(name="id_customer", insertable = false, updatable = false)
+    private Customer customer;
+
+    @OneToMany(mappedBy = "product")
+    private List<PurchasesProduct> products;
 
     public Integer getIdPurchase() {
         return idPurchase;
