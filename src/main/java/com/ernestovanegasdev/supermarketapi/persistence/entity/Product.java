@@ -20,10 +20,18 @@ public class Product {
     @Column(name = "sale_price")
     private Integer salePrince;
 
-    @Column(name = "quatity_stock")
-    private Integer quatityStock;
+    @Column(name = "quantity_stock")
+    private Integer quantityStock;
 
     private Boolean status;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     @ManyToOne
     @JoinColumn(name="id_category", insertable = false, updatable = false)
@@ -71,11 +79,11 @@ public class Product {
     }
 
     public Integer getQuatityStock() {
-        return quatityStock;
+        return quantityStock;
     }
 
     public void setQuatityStock(Integer quatityStock) {
-        this.quatityStock = quatityStock;
+        this.quantityStock = quatityStock;
     }
 
     public Boolean getStatus() {

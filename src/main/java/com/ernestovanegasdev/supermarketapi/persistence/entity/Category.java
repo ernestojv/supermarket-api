@@ -11,6 +11,14 @@ public class Category {
     @Column(name = "id_category")
     private Integer idCategory;
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
     private String description;
 
     private Boolean status;
